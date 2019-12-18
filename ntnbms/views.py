@@ -23,16 +23,26 @@ def home(request):
 def new(request):
    
     if request.method == 'POST':
-        new=personal_information()
-        new.First_Name = request.POST.get('First_Name')
-        new.Last_Name = request.POST.get('Last_Name')
-        new.Other_Name = request.POST.get('Other_Name')
+        new=booking()
+        new.BID = request.POST.get('BookingID')
+        new.CID = request.POST.get('CustomerID')
+        new.Recepient_Name = request.POST.get('Recepient_Name')
+        new.Number_Of_Showing = request.POST.get('Number_Of_Showing')
+        new.Text_Content = request.POST.get('TextContent')
+        new.Image_File = request.POST.get('Image')
+        new.Video_File = request.POST.get('Video')
+        new.Date_Created = request.POST.get('DateCreated')
         new.save()
 
         context = {
-            'First_Name': new.First_Name,
-            'Last_Name': new.Last_Name,
-            'Other_Name': new.Other_Name
+            'BookingID': new.BID,
+            'CustoerID': new.CID,
+            'Recepient_Name': new.Recepient_Name,
+            'Number_Of_Showing': new.Number_Of_Showing,
+            'TextContent': new.Text_Content,
+            'Image': new.Image_File,
+            'Video': new.Vido_File,
+            'DateCreated': new.Date_Created
         }
         
 
