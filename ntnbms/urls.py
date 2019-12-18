@@ -19,6 +19,7 @@ urlpatterns = [
 urlpatterns = [
     path('', views.login, name='login'),
     path('ntnbms/home', views.home, name='home'),
+    path('ntnbms/viewCustomer', views.viewCustomer, name='viewCustomer'),
     path('ntnbms/search', views.search, name='search'),
     path('ntnbms/view/<key>/', views.view, name='view'), 
    # path('ntnbms/edit_record/<key>/', views.edit_record, name='edit_record'),
