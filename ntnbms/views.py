@@ -47,10 +47,8 @@ def new(request):
 
 
 def view(request, key):
-    detail = personal_information.objects.get(InternID=key)
-    result = internship_history.objects.filter(InternID=key)
-    query_set = qualifications_on_entry.objects.filter(InternID=key)
-    return render(request, 'ntnbms/view.html', {'personal_information': detail, 'internship_history': result, 'qualifications_on_entry': query_set})
+    detail = booking.objects.get(BID=key)
+    return render(request, 'ntnbms/view.html', {'booking': detail})
 
 
 
