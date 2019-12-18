@@ -10,7 +10,8 @@ urlpatterns = [
 
 
     url(r'^getdata/', views.new),
-
+    url(r'^getdata/', views.newCustomer),
+    
 
 ]
 
@@ -25,4 +26,6 @@ urlpatterns = [
    # path('ntnbms/edit_record/<key>/', views.edit_record, name='edit_record'),
     path('ntnbms/update_record/<key>/', views.update_record, name='update_record'),
     path('ntnbms/new', views.new, name='new'),
+    path('ntnbms/newCustomer', views.newCustomer, name='newCustomer'),
+
 ]
