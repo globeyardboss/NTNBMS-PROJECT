@@ -4,9 +4,14 @@
 
 {% block content %}
 
+<li>View Record</li>
+</ul>
+
+</div>
+  <br>
 
     <div class="card mx-auto"style="width: 80rem;">
-      <div class="card-header text-white" style="background-color: #428bca  ">Booking</div>
+      <div class="card-header text-white" style="background-color: #428bca  ">Booking Records</div>
       <div class="card-body">
 
         <form class="form-sample">
@@ -83,7 +88,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Image Files</label>
                 <div class="col-sm-9">
-                  <input type="file" class="form-control" value="{{ booking.Image_File }}"/>
+                  <input type="image" class="form-control" value="{{ booking.Image_File }}"/>
                 </div>
               </div>
             </div>
@@ -94,7 +99,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Video Files</label>
                 <div class="col-sm-9">
-                  <input type="file" class="form-control" value="{{ booking.Video_File }}"/>
+                  <input type="file" accept="video" class="form-control" value="{{ booking.Video_File }}"/>
                 </div>
               </div>
             </div>

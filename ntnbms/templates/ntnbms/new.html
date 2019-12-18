@@ -1,29 +1,30 @@
- 
+
 {% extends 'ntnbms/base.html' %}
 
 {% block title %}New_Record{% endblock %}
 
 {% block content %}
-  
-  
+
+
+
     <div class="card mx-auto"style="width: 80rem;">
       <div class="card-header text-white" style="background-color: #428bca  ">Booking</div>
       <div class="card-body">
- 
+
         <form action=""class="form-sample" method="Post">
- 
+
           <br>
-        
+
 
           <form class="form-sample" method="POST" action="/getdata/">
- 
+
             <br>
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Booking ID</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="BookingID" name="BookingID" required>
+                    <input type="number" class="form-control" id="BookingID" name="BookingID" required>
                   </div>
                 </div>
               </div>
@@ -31,12 +32,12 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Customer ID</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="CustomerID" name="CustomerID">
+                    <input type="number" class="form-control" id="CustomerID" name="CustomerID">
                   </div>
                 </div>
               </div>
             </div>
-  
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
@@ -50,20 +51,20 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Number Of Showings</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="NumberOfShowing" name="NumberOfShowing">
+                    <input type="number" class="form-control" id="NumberOfShowing" name="NumberOfShowing">
                   </div>
                 </div>
               </div>
             </div>
-  
-  
-  
+
+
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label"> Air Time</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="Air_Time" name="Air_Time" required>
+                    <input type="time" class="form-control" id="Air_Time" name="Air_Time" required>
                   </div>
                 </div>
               </div>
@@ -78,16 +79,13 @@
               </div>
             </div>
 
-              
+
              <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Image File</label>
                   <div class="col-sm-9">
-                    <select class="form-control" id="Image" name="Image" required>
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
+                    <input type="file" class="form-control" id="image" name="image">
                   </div>
                 </div>
               </div>
@@ -95,12 +93,12 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Video File</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control" id="Video" name="Video">
+                    <input type="file" class="form-control" id="Video" name="Video">
                   </div>
                 </div>
               </div>
             </div>
-              
+
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group row">
@@ -108,16 +106,16 @@
                   <div class="col-sm-9">
                     <input class="form-control" id="DOB" placeholder="mm/dd/yyyy" name="DateCreated" required>
                   </div>
-  
+
                 </div>
               </div>
-              
 
-        
+
+
                         <br>
-          <button class="btn btn-danger btn-rounded" type="reset">Clear</button>&nbsp;<button class="btn btn-success btn-rounded" type="submit" value="submit">Save</button> 
+          <button class="btn btn-danger btn-rounded" type="reset">Clear</button>&nbsp;<button class="btn btn-success btn-rounded" type="submit" value="submit">Save</button>
         </form>
       </div>
     </div>
-  
+
 {% endblock %}
