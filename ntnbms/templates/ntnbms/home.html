@@ -44,7 +44,7 @@
                 <div class="input-group stylish-input-group">
                     <form action="/database/search" method="POST">
                             {% csrf_token %}
-                        <input type="text" class="form-control"  placeholder="Search Records" name="search_item" >
+                        <input type="text" class="form-control form-inline active-purple-3 active-purple-4"  placeholder="Search Records" name="search_item" >
                         <span class="input-group-addon">
                             <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
@@ -53,7 +53,7 @@
             </div>
         </div>
 	</div>
-    <div class="btn-group">
+  <!--  <div class="btn-group">
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Database
             </button>
@@ -65,24 +65,10 @@
             </ul>
           </div>
 
-        </div>
+        </div>-->
 
     <div class="create-btn">
-<<<<<<< HEAD
-          
-              
-            
-       
-        <a href="{% url 'new' %}">	&nbsp; <button type="button" class="btn btn-success btn-rounded">Create record</button></a>
-     
-=======
-
-
-
-
-        <a>	&nbsp; <button type="button" class="btn btn-success btn-rounded">Create record</button></a>
-
->>>>>>> b3852bc2a10813443d07713440d9fe82ea05cccb
+        <a>	&nbsp; <button type="button" class="btn btn-success btn-rounded">View Customers</button></a>
       </div>
 
 
@@ -121,7 +107,7 @@
                     <td>{{ book.Date_Created }}</td>
 
                     <td><a href="{% url 'view' key=book.BID %}"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a><p></p></td>
-                    <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button><p></p></td>   
+                      <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button><p></p></td>
                   </tr>
                   {% endfor %}
                 </tbody>
