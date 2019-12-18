@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.template import loader
 from django.views.decorators.csrf import csrf_exempt
 from .models import booking
+from .models import customer
 
 
 # Create your views here.
@@ -16,6 +17,13 @@ def home(request):
     Booking = booking.objects.all()
     Booking = booking.objects.order_by('BID')
     return render(request, 'ntnbms/home.html', {'Booking': Booking})
+
+
+def viewCustomer(request):
+    Customer = customer.objects.all()
+    Customer = customer.objects.order_by('CID')
+    return render(request, 'ntnbms/viewCustomer.html', {'Customer': Customer})
+    
     
 
 
@@ -59,6 +67,11 @@ def new(request):
 def view(request, key):
     detail = booking.objects.get(BID=key)
     return render(request, 'ntnbms/view.html', {'booking': detail})
+
+
+
+
+
 
 
 
