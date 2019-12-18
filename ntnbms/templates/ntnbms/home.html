@@ -13,17 +13,17 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="{% static 'css/indexstyle.css' %}">
-	
 
-    
+
+
     <title>Home</title>
 </head>
 
 <body style="background:#efefef">
-  
- 
 
-   <div class="bg-color">    
+
+
+   <div class="bg-color">
 
 <nav class="navbar">
    <a href="index.html"> <img src="{% static "" %}" alt="My image"></a>
@@ -34,19 +34,19 @@
         </a>
 
 </nav>
-   
+
     <div class="container">
 
 
 	<div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container"> 
+            <div id="imaginary_container">
                 <div class="input-group stylish-input-group">
                     <form action="/database/search" method="POST">
                             {% csrf_token %}
                         <input type="text" class="form-control"  placeholder="Search Records" name="search_item" >
                         <span class="input-group-addon">
-                            <button type="submit"><span class="glyphicon glyphicon-search"></span></button>  
+                            <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
                         </span>
                     </form>
                 </div>
@@ -58,33 +58,33 @@
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Database
             </button>
             <ul class="dropdown-menu">
-    
+
               <li class="active"><a href="">Database</a></li>
-              
-             
+
+
             </ul>
           </div>
-         
+
         </div>
-    
+
     <div class="create-btn">
-          
-              
-            
-       
+
+
+
+
         <a>	&nbsp; <button type="button" class="btn btn-success btn-rounded">Create record</button></a>
-     
+
       </div>
-      
-    
+
+
 
 <br>
 <br>
 
 <div class="col-lg-12 grid-margin stretch-card">
-    
+
         <div class="table-responsive">
-            
+
           {{item}}
           <table class="table table-bordered table-hover " style="background-color: #ffffff">
               <thead class="thead">
@@ -101,7 +101,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for book in Booking %} 
+                  {% for book in Booking %}
                   <tr>
                     <td>{{ book.BID }}</td>
                     <td>{{ book.CID }}</td>
@@ -110,11 +110,11 @@
                     <td>{{ book.Air_Time }}</td>
                     <td>{{ book.Air_Date }}</td>
                     <td>{{ book.Date_Created }}</td>
- 
+
                     <td><a href="{% url 'view' key=book.BID %}"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a><p></p></td>
-                    <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button><p></p></td>   
+                    <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-trash"></span></button><p></p></td>   
                   </tr>
-                  {% endfor %}     
+                  {% endfor %}
                 </tbody>
 
           </table>
@@ -134,7 +134,7 @@
   </ul>
 </nav>
         </div>
-      
+
 
     </div>
 <div id="myModal" class="modal fade">
@@ -142,9 +142,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="icon-box">
-					
-				</div>				
-				<h4 class="modal-title">Are you sure?</h4>	
+
+				</div>
+				<h4 class="modal-title">Are you sure?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
@@ -156,16 +156,16 @@
 			</div>
 		</div>
 	</div>
-</div> 
-       
+</div>
+
 <div id="switchModal" class="modal fade">
 	<div class="modal-dialog modal-confirm">
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="icon-box">
-					
-				</div>				
-				<h4 class="modal-title">Do you want to use another database?</h4>	
+
+				</div>
+				<h4 class="modal-title">Do you want to use another database?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
@@ -177,11 +177,11 @@
 			</div>
 		</div>
 	</div>
-</div>        
-       
-</div> 
-  
-   
+</div>
+
+</div>
+
+
 </body>
 
 </html>
