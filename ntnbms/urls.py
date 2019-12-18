@@ -5,7 +5,7 @@ from . import views
 
 
 
-
+'''
 urlpatterns = [
 
 
@@ -13,10 +13,11 @@ urlpatterns = [
 
 
 ]
-
+'''
 
 
 urlpatterns = [
     path('', views.login, name='login'),
     path('ntnbms/home', views.home, name='home'),
+    path('ntnbms/view/<key>/', views.view, name='view'), 
 ]
