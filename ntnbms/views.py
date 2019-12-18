@@ -56,11 +56,40 @@ def new(request):
 
         return render(request, 'ntnbms/new.html', {})
     
-
     else:
         return render(request, 'ntnbms/new.html', {})
 
 
+
+
+@csrf_exempt
+def newCustomer(request):
+   
+    if request.method == 'POST':
+        newCustomer=customer()
+        newCustomer.CID = request.POST.get('CustomerID')
+        newCustomer.First_Name = request.POST.get('FirstName')
+        newCustomer.Last_Name = request.POST.get('LastName')
+        newCustomer.Email = request.POST.get('Email')
+        newCustomer.Main_Telephone_Number = request.POST.get('Main_Telephone')
+        newCustomer.Other_Telephone_Number = request.POST.get('Other_Telephone')
+        newCustomer.save()
+
+        context = {
+            'BookinID': newCustomer.CID,
+            'CustomerID': newCustomer.First_Name,
+            'Recepient_Name': newCustomer.Last_Name,
+            'Email': newCustomer.Email,
+            'Main_Telephone': newCustomer.Main_Telephone_Number,
+            'Other_Telephone': newCustomer.Other_Telephone_Number,
+            
+        }
+        
+
+        return render(request, 'ntnbms/new.html', {})
+    
+    else:
+        return render(request, 'ntnbms/new.html', {})
 
 
 
