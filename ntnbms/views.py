@@ -155,3 +155,17 @@ def search(request):
     else:
          # return render(request, 'ntnbms/home.html', {})
          return HttpResponse('Nothing to display')
+
+
+
+
+def searchCustomer(request):
+    Customer = customer.objects.all()
+    if request.method == 'POST':
+      search_query = request.POST.get('search_item', '')      
+      Customer = customer.objects.filter(First_Name__icontains= search_query).order_by('CID') | customer.objects.filter(Last_Name__icontains= search_query).order_by('CID') | customer.objects.filter(Email__icontains= search_query).order_by('CID')
+      return render(request, 'ntnbms/searchCustomer.html', {'Customer': Customer})
+
+    else:
+         # return render(request, 'ntnbms/viewCustomer.html', {})
+         return HttpResponse('Nothing to display')
