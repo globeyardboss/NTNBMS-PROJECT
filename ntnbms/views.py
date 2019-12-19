@@ -86,10 +86,10 @@ def newCustomer(request):
         }
         
 
-        return render(request, 'ntnbms/new.html', {})
+        return render(request, 'ntnbms/newCustomer.html', {})
     
     else:
-        return render(request, 'ntnbms/new.html', {})
+        return render(request, 'ntnbms/newCustomer.html', {})
 
 
 
@@ -139,7 +139,8 @@ def update_customer_record(request, key):
         det.Main_Telephone_Number = request.POST.get('five')
         det.Other_Telephone_Number = request.POST.get('six')
         det.save()
-        return HttpResponseRedirect('/ntnbms/edit_customer_record/%s/' % key)
+       # return HttpResponseRedirect('/ntnbms/edit_customer_record/%s/' % key)
+        return HttpResponseRedirect('/ntnbms/viewCustomer')
        
 
 
