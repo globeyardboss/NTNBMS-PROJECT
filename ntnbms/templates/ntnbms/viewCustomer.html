@@ -95,14 +95,14 @@
                 <tbody>
                   {% for customer in Customer %}
                   <tr>
-                    <td>{{ book.CID }}</td>
-                    <td>{{ book.First_Name }}</td>
-                    <td>{{ book.Last_Name }}</td>
-                    <td>{{ book.Email }}</td>
-                    <td>{{ book.Main_Telephone_Number}}</td>
-                    <td>{{ book.Other_Telephone_Number }}</td>
+                    <td>{{ customer.CID }}</td>
+                    <td>{{ customer.First_Name }}</td>
+                    <td>{{ customer.Last_Name }}</td>
+                    <td>{{ customer.Email }}</td>
+                    <td>{{ customer.Main_Telephone_Number}}</td>
+                    <td>{{ customer.Other_Telephone_Number }}</td>
 
-                    <td><a><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a><p></p></td>
+                    <td><a href="{% url 'edit_customer_record' key=customer.CID %}"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a><p></p></td>
                     <td><button data-title="New Booking"></button></td>
                   </tr>
                   {% endfor %}
