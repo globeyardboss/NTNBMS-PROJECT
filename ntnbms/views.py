@@ -34,7 +34,7 @@ def new(request):
         new=booking()
         new.BID = request.POST.get('BookingID')
         new.CID = request.POST.get('CustomerID')
-        new.Recepient_Name = request.POST.get('Recepient_Name')
+        new.Recipient_Name = request.POST.get('Recepient_Name')
         new.Number_Of_Showing = request.POST.get('Number_Of_Showing')
         new.Text_Content = request.POST.get('TextContent')
         new.Image_File = request.POST.get('Image')
@@ -45,7 +45,7 @@ def new(request):
         context = {
             'BookingID': new.BID,
             'CustoerID': new.CID,
-            'Recepient_Name': new.Recepient_Name,
+            'Recepient_Name': new.Recipient_Name,
             'Number_Of_Showing': new.Number_Of_Showing,
             'TextContent': new.Text_Content,
             'Image': new.Image_File,
@@ -117,7 +117,7 @@ def edit_customer_record(request, key):
 def update_record(request, key):
     det = booking.objects.get(CID=key)
     if request.method == 'POST':
-        det.Recepient_Name = request.POST.get('three')  
+        det.Recipient_Name = request.POST.get('three')  
         det.Number_Of_Showing = request.POST.get('four') 
         det.Air_Time = request.POST.get('five')   
         det.Text_Content = request.POST.get('six')
@@ -146,11 +146,11 @@ def update_customer_record(request, key):
 
 
 def search(request):
-    Personal_Information = personal_information.objects.all()
+    Booking = booking.objects.all()
     if request.method == 'POST':
       search_query = request.POST.get('search_item', '')      
-      Personal_Information = personal_information.objects.filter(First_Name__icontains= search_query).order_by('InternID') | personal_information.objects.filter(Last_Name__icontains= search_query).order_by('InternID')
-      return render(request, 'ntnbms/search.html', {'Personal_Information': Personal_Information})
+      Booking = booking.objects.filter(Recipient_Name__icontains= search_query).order_by('BID') | booking.objects.filter(Air_Time__icontains= search_query).order_by('BID') | booking.objects.filter(Air_Date__icontains= search_query).order_by('BID') | booking.objects.filter(Date_Created__icontains= search_query).order_by('BID')
+      return render(request, 'ntnbms/search.html', {'Booking': Booking})
 
     else:
          # return render(request, 'ntnbms/home.html', {})
