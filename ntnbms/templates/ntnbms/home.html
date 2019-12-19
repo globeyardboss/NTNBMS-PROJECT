@@ -84,8 +84,8 @@
           <table class="table table-bordered table-hover " style="background-color: #ffffff">
               <thead class="thead">
                   <tr>
-                    <th style="width: 100px" >BookingID</th>
-                    <th>Customer Name</th>
+                    <th style="width: 100px" >Booking #</th>
+                   <!---- <th>Customer Name</th> -->
                     <th>Recipient Name</th>
                     <th>Number of Showing </th>
                     <th>Air Time</th>
@@ -99,7 +99,7 @@
                   {% for book in Booking %}
                   <tr>
                     <td>{{ book.BID }}</td>
-                    <td>{{ book.CID }}</td>
+                   <!---- <td>{{ book.CID }}</td>-->
                     <td>{{ book.Recipient_Name }}</td>
                     <td>{{ book.Number_Of_Showing }}</td>
                     <td>{{ book.Air_Time }}</td>
