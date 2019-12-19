@@ -86,10 +86,10 @@ def newCustomer(request):
         }
         
 
-        return render(request, 'ntnbms/new.html', {})
+        return render(request, 'ntnbms/newCustomer.html', {})
     
     else:
-        return render(request, 'ntnbms/new.html', {})
+        return render(request, 'ntnbms/newCustomer.html', {})
 
 
 
