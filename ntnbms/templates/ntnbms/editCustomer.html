@@ -1,0 +1,84 @@
+{% extends 'ntnbms/base.html' %}
+
+{% block title %}Edit_Customer_Record{% endblock %}
+
+{% block content %}
+
+<li>Edit Customer Record</li>
+</ul>
+
+</div>
+  <br>
+
+    <div class="card mx-auto"style="width: 80rem;">
+      <div class="card-header text-white" style="background-color: #428bca  ">Customer Record</div>
+      <div class="card-body">
+
+        <form action="{% url 'update_customer_record' key=customer.CID%}" method="POST" class="form-sample">
+          {% csrf_token %}
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Customer ID</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ customer.CID }}"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">First Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ customer.First_Name}}" name="two"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ customer.Last_Name }}" name="three"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ Email.Email}}" name="four"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Main Telephone Number</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ customer.Main_Telephone_Number }}" name="five"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Other Telephone Number</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" value="{{ customer.Other_Telephone_Number }}" name="six"/>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+            
+           <br><br>
+
+           <button type="submit" class="btn btn-success btn-rounded">Update record</button>  
+          
+{% endblock %}
