@@ -103,7 +103,7 @@
                     <td>{{ customer.Other_Telephone_Number }}</td>
 
                     <td><a href="{% url 'edit_customer_record' key=customer.CID %}"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a><p></p></td>
-                    <td><button data-title="New Booking"><span class="glyphicon glyphicon-plus"></span></button></td>
+                    <td><a href="{% url 'new'%}"><button data-title="New Booking"><span class="glyphicon glyphicon-plus"></span></button></td>
                   </tr>
                   {% endfor %}
                 </tbody>
