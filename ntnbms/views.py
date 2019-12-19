@@ -107,6 +107,12 @@ def edit_record(request, key):
 
 
 
+def edit_customer_record(request, key): 
+    detail = customer.objects.get(CID=key)
+    return render(request, 'ntnbms/editCustomer.html', {'customer': detail})   
+
+
+
 
 def update_record(request, key):
     det = booking.objects.get(CID=key)
@@ -121,6 +127,20 @@ def update_record(request, key):
         det.Date_Created = request.POST.get('ten')
         det.save()
         return HttpResponseRedirect('/ntnbms/edit_record/%s/' % key)
+
+
+
+def update_customer_record(request, key):
+    det = customer.objects.get(CID=key)
+    if request.method == 'POST':
+        det.First_Name = request.POST.get('two')  
+        det.Last_Name = request.POST.get('three') 
+        det.Email = request.POST.get('four')   
+        det.Main_Telephone_Number = request.POST.get('five')
+        det.Other_Telephone_Number = request.POST.get('six')
+        det.save()
+        return HttpResponseRedirect('/ntnbms/edit_customer_record/%s/' % key)
+       
 
 
 
