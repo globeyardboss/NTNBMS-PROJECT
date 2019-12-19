@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -16,6 +18,7 @@ class customer(models.Model):
 
     def __str__(self):
         return self.Last_Name
+		
 
 
 
@@ -36,3 +39,8 @@ class booking(models.Model):
 
     def __str__(self):
         return self.Recipient_Name
+
+def create_profile(sender, **kwargs):
+    if kwargs['created']:
+        user_profile = booking.objects.create(BID=kwargs['instance'])
+post_save.connect(create_profile, sender=User)
