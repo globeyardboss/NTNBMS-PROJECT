@@ -44,7 +44,7 @@ def new(request):
 
         context = {
             'BookingID': new.BID,
-            'CustoerID': new.CID,
+            'CustomerID': new.CID,
             'Recepient_Name': new.Recipient_Name,
             'Number_Of_Showing': new.Number_Of_Showing,
             'TextContent': new.Text_Content,
@@ -53,7 +53,7 @@ def new(request):
             'DateCreated': new.Date_Created
         }
         
-
+        
         return render(request, 'ntnbms/new.html', {})
     
     else:
@@ -139,7 +139,8 @@ def update_customer_record(request, key):
         det.Main_Telephone_Number = request.POST.get('five')
         det.Other_Telephone_Number = request.POST.get('six')
         det.save()
-        return HttpResponseRedirect('/ntnbms/edit_customer_record/%s/' % key)
+       # return HttpResponseRedirect('/ntnbms/edit_customer_record/%s/' % key)
+        return HttpResponseRedirect('/ntnbms/viewCustomer')
        
 
 
